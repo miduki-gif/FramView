@@ -14,10 +14,8 @@ export const MissCheck = async (inputContents) => {
         },
         body: JSON.stringify({ message: inputContents })
     });
-    console.log("status:", res.status);
-    const text = await res.text();
-    // const resdata = await res.json();
-    console.log(resdata);
+   
+    const resdata = await res.json();
     return resdata;
     // resdata.result.forEach(element => {
     //     const p = document.createElement("p");
