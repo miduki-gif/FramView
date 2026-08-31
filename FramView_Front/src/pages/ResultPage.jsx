@@ -9,8 +9,12 @@ export const ResultPage = () => {
     const results = resResult?.result?? [];
     //表示する番号
     const [currentIndex, setCurrentIndex]= useState(0);
-    //現在表示するデータ
-    const currentResult = results[currentIndex];
+     //カテゴリ一覧
+    const categories = Object.keys(results);
+    //現在表示するカテゴリの要素
+    const currentCategories = categories[currentIndex];
+    //今のカテゴリに含まれている不足点・質問を取得
+    const currentResults = results[currentCategories];
 
     const nextPage = () => {
         setCurrentIndex((prev) => prev + 1);
@@ -22,16 +26,21 @@ export const ResultPage = () => {
     return(
         <>
         <h1>不足点検知結果</h1>
-        {currentResult && (
+        {currentCategories && (
             <>
-                <p>{currentIndex + 1} /{results.length}</p>
-                <p>{currentResult.category}</p>
-                <p>{currentResult.miss_point}</p>
-                <p>{currentResult.question}</p>
+                <p>{currentIndex + 1} /{categories.length}</p>
+                <p>{currentCategories}</p>
+                 {/* カテゴリに含まれる不足点や質問 */}
+                {currentResults.map((result, index) => (
+                    <div key={index}>
+                        <p>{result.miss_point}</p>
+                        <p>{result.question}</p>
+                        </div>
+                ))}
                 {currentIndex > 0 && 
                 <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#BFC5CA', color: '#1F1F1F' }} onClick={backPage}>戻る</Button>
                 }
-                {currentIndex < results.length -1 && (
+                {currentIndex < categories.length -1 && (
                     <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={nextPage}>次へ</Button>
                 )}
             </>

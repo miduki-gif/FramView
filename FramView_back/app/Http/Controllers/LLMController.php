@@ -118,8 +118,10 @@ class LLMController extends Controller
         ],
 ]);
 $json = json_decode($response->outputText, true);
+//カテゴリごとにグループ分け
+$group = collect($json)->groupBy("category");
 return response()->json([
-    'result' => $json,
+    'result' => $group,
 ]);
 
 } catch (\Throwable $e) {
