@@ -1,7 +1,7 @@
 export const MissCheck = async (inputContents) => {
     console.log("click")
     console.log(inputContents);
-    const res = await fetch("https://3.26.117.182/api/Check-api", {
+    const res = await fetch("https://api.framview.com/api/Check-api", {
         //1.test-apiにPOSTで通信が届いているかを確認すべき
         //2.データの中身が届いているかを確認する
         method: "POST",
