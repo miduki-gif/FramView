@@ -64,7 +64,12 @@ function App() {
     }))
   }
   if (isLoading) {
-    return <LinearProgress variant="solid" color="success" size="lg" value={35}/>
+    return (
+      <>
+      <h2>Loading・・・</h2>
+      <LinearProgress variant="solid" color="success" size="lg" value={35}/>
+      </>
+    )
   }
 
   // const buttonUI = questionCurrentContents === questions.length -1 ? <Button>保存して一覧へ</Button> : 
