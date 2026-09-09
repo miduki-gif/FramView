@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export const useMissCheck =  (inputContents) => {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
