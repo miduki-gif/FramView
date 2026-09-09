@@ -1,13 +1,14 @@
 // import './App.css'
 import { Button, TextField} from '@mui/material';
-import { QuestionCard } from '../src/components/QuestionCard'
+import { QuestionCard } from './components/QuestionCard'
 import { useState } from 'react';
-import { MissCheck } from '../src/components/Check'
+import { useMissCheck } from './components/Check'
 import { useNavigate } from 'react-router';
-import { ResultPage } from './pages/ResultPage';
+import { LinearProgress } from '@mui/material';
 
 function App() {
-
+  //useMissCheck関数を呼び出すとfetchExecuteを受け取れる
+  const { isLoading, error, fetchExecute } = useMissCheck();
   const [inputContents, setInputContents ] = useState({});
   const questions = [
     "目指すゴールと達成度を測る成功指標(KPI)を入力してください",
@@ -30,9 +31,9 @@ function App() {
 
   const navigate = useNavigate();
   
-  const missCheck = async () => {
+  const MissCheck = async () => {
     if (buttonClassName){
-      const data = await MissCheck(inputContents);
+      const data = await fetchExecute(inputContents);
         console.log("処理完了");
         navigate("/result", { state: { resResult: data }});
     }else{
@@ -62,6 +63,9 @@ function App() {
       [inputkey]:value
     }))
   }
+  if (isLoading) {
+    return <LinearProgress variant="solid" color="success" size="lg" value={35}/>
+  }
 
   // const buttonUI = questionCurrentContents === questions.length -1 ? <Button>保存して一覧へ</Button> : 
   return (
@@ -86,7 +90,7 @@ function App() {
     backQuestion={backQuestion} 
     buttonText={buttonText} 
     buttonClassName={buttonClassName}
-    onClick= {missCheck}
+    onClick= {MissCheck}
     questionNumber={questionCurrentContents + 1}
     labels={labels}
     />
