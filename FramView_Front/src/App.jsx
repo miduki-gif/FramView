@@ -65,9 +65,9 @@ function App() {
   if (isLoading) {
     return (
       <>
-      <h2 style={{display: "flex", justifyContent:"center", alignItems:"center"}}>Loading・・・</h2>
-      <Grid container alignItems="center" justifyContent="center" sx={{ height: "100vh"}}>
+      <Grid container direction="column" alignItems="center" justifyContent="center" sx={{ height: "100vh"}}>
         <Grid size={{xs:8, sm:6, md:4}}>
+          <h2 style={{textAlign:"center", marginBottom:"12px"}}>Loading・・・</h2>
           <LinearProgress color="success"/>
         </Grid> 
       </Grid>
