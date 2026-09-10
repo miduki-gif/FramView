@@ -1,5 +1,4 @@
-// import './App.css'
-import { Button, TextField, Grid, LinearProgress, CircularProgress} from '@mui/material';
+import { Button, Grid} from '@mui/material';
 import { QuestionCard } from './components/QuestionCard'
 import { useState } from 'react';
 import { useMissCheck } from './components/Check'
@@ -69,7 +68,7 @@ function App() {
       <h2 style={{display: "flex", justifyContent:"center", alignItems:"center"}}>Loading・・・</h2>
       <Grid container alignItems="center" justifyContent="center" sx={{ height: "100vh"}}>
         <Grid item>
-          <LinearProgress color="success" />
+          <LinearProgress color="success"/>
         </Grid> 
       </Grid>
       </>
