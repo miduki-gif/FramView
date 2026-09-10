@@ -2,7 +2,6 @@ import { Grid, Typography, TextField, Button, Box, colors, IconButton, Tooltip }
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import HelpIcon from '@mui/icons-material/Help';
-import { useId } from 'react';
 
 export const QuestionCard = ({ questionNumber, question, labels, value, onChange, backQuestion, buttonText, buttonClassName, onClick }) => {
     return (

@@ -7,7 +7,7 @@ export const useMissCheck =  (inputContents) => {
     
         const fetchExecute  = async (inputContents) => {
         if (!inputContents) return;
-            async function apiFetchData() {
+
                 setIsLoading(true);
                 //データ取得
                 try{
@@ -25,15 +25,16 @@ export const useMissCheck =  (inputContents) => {
             if (!res.ok) {
                 throw new Error("データの取得に失敗しました。");
             }
-                const data = await res.json();
-                return setData(data);
+                const resultData = await res.json();
+                setData(resultData);
+                return resultData;
+
                 } catch (error) {
                         setError(error.message);
+                        throw error;
                 } finally {
                     setIsLoading(false);
                 }
-                    };
-                apiFetchData();
                     };
     return { isLoading, error, fetchExecute };
 
