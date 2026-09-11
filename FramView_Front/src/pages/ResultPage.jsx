@@ -1,6 +1,9 @@
 import { Button } from '@mui/material';
 import { useState } from "react";
 import { useLocation } from "react-router";
+import { Grid, Button, Box} from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export const ResultPage = () => {
     const location = useLocation();
@@ -25,26 +28,34 @@ export const ResultPage = () => {
     }
     return(
         <>
-        <h1>不足点検知結果</h1>
-        {currentCategories && (
-            <>
-                <p>{currentIndex + 1} /{categories.length}</p>
-                <p>{currentCategories}</p>
-                 {/* カテゴリに含まれる不足点や質問 */}
-                {currentResults.map((result, index) => (
-                    <div key={index}>
-                        <p>{result.miss_point}</p>
-                        <p>{result.question}</p>
-                        </div>
-                ))}
-                {currentIndex > 0 && 
-                <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#BFC5CA', color: '#1F1F1F' }} onClick={backPage}>戻る</Button>
-                }
-                {currentIndex < categories.length -1 && (
-                    <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={nextPage}>次へ</Button>
-                )}
-            </>
-        )}
+            <Box sx={{minHeight:"90vh", display:'flex', justifyContent:'center', alignItems:'center',mx:"auto"}}> 
+                <Card sx={{width:"60%", height:"70%"}}>
+                    <CardContent>
+                        <Grid container sx={{justifyContent:'center', alignItems:'center'}}>
+                            <h1>不足点検知結果</h1>
+                            {currentCategories && (
+                                <>
+                                    <p>{currentIndex + 1} /{categories.length}</p>
+                                    <p>{currentCategories}</p>
+                                    {/* カテゴリに含まれる不足点や質問 */}
+                                    {currentResults.map((result, index) => (
+                                        <div key={index}>
+                                            <p>{result.miss_point}</p>
+                                            <p>{result.question}</p>
+                                            </div>
+                                    ))}
+                                    {currentIndex > 0 && 
+                                    <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#BFC5CA', color: '#1F1F1F' }} onClick={backPage}>戻る</Button>
+                                    }
+                                    {currentIndex < categories.length -1 && (
+                                        <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={nextPage}>次へ</Button>
+                                    )}
+                                </>
+                            )}
+                                </Grid>
+                    </CardContent>
+                </Card>
+            </Box>
         </>
     );
 };
