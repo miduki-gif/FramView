@@ -10,15 +10,15 @@ export const QuestionCard = ({ questionNumber, question, labels, value, onChange
             <Card sx={{width:"60%", height:"70%"}}>
                 <CardContent>
                     <Grid container sx={{justifyContent:'center', alignItems:'center'}}>
-                        <Grid item>
+                        <Grid>
                             <Typography sx={{ color: '#8F7FEE', mb:1, ml:15 }}>{questionNumber}/8</Typography>
                             <Typography id="goalSucsessKpi" sx={{mb:2}}>{question}</Typography>
                             {
                                 labels.map(label =>
-                                    <div key={label.label}>
+                                    <div key={label.label} style={{position:"relative"}}>
                                     {label.description && (
                                    <Tooltip title={label.description}>
-                                        <HelpIcon/>
+                                        <HelpIcon sx={{ position:"absolute", right:1, top:12 }}/>
                                     </Tooltip>
                                     )}
                             <TextField
