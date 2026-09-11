@@ -35,12 +35,11 @@ export const ResultPage = () => {
                             <br />
                             {currentCategories && (
                                 <>
-                                    <Grid container direction="row" spacing={5}>
-                                        <Grid>
-                                            <p style={{ color: '#8F7FEE', mb:1, ml:15, fontSize:12}}>カテゴリ{currentIndex + 1} /{categories.length}</p>
-                                            <p style={{fontSize:16}}>{currentCategories}</p>
-                                        </Grid>
-                                    </Grid>
+                                    <Box sx={{display:"flex", alignItems:"baseline", gap:3, mt:3 }}>
+                                        <p style={{ color: '#8F7FEE', mb:1, ml:15, fontSize:12}}>カテゴリ{currentIndex + 1} /{categories.length}</p>
+                                        <p style={{fontSize:16}}>{currentCategories}</p>
+                                     </Box>
+                                       
                                     {/* カテゴリに含まれる不足点や質問 */}
                                     {currentResults.map((result, index) => (
                                         <div key={index}>
