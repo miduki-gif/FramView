@@ -24,7 +24,7 @@ function App() {
 
   const [questionCurrentContents, setQuestionCurrentContents] = useState(0);
   const nextQuestion = questionCurrentContents + 2;
-  const backQuestion = questionCurrentContents !== 0 && <Button variant="contained" sx={{ backgroundColor: '#E6E6F2', color: '#1F1F1F', mt:5, ml:5}} onClick={ ()=> setQuestionCurrentContents(questionCurrentContents - 1 )}>{`質問${questionCurrentContents}へ戻る`}</Button>;
+  const backQuestion = questionCurrentContents !== 0 && <Button variant="contained" sx={{ backgroundColor: '#E6E6F2', color: '#1F1F1F'}} onClick={ ()=> setQuestionCurrentContents(questionCurrentContents - 1 )}>{`質問${questionCurrentContents}へ戻る`}</Button>;
   const buttonText = questionCurrentContents === questions.length -1 ? "不足点検知" : `質問${nextQuestion}へ`
   const buttonClassName = questionCurrentContents === questions.length -1;
 

@@ -1,4 +1,4 @@
-import { Grid, Typography, TextField, Button, Box, colors, IconButton, Tooltip } from '@mui/material';
+import { Typography, TextField, Button, Box, Tooltip } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import HelpIcon from '@mui/icons-material/Help';
@@ -6,12 +6,11 @@ import HelpIcon from '@mui/icons-material/Help';
 export const QuestionCard = ({ questionNumber, question, labels, value, onChange, backQuestion, buttonText, buttonClassName, onClick }) => {
     return (
         <>
-        <Box sx={{minHeight:"90vh", display:'flex', justifyContent:'center', alignItems:'center',mx:"auto"}}> 
+        <Box sx={{minHeight:"90vh", display:'flex', justifyContent:'center', alignItems:'center'}}> 
             <Card sx={{width:"60%", height:"70%"}}>
                 <CardContent>
-                    <Grid container sx={{justifyContent:'center', alignItems:'center'}}>
-                        <Grid>
-                            <Typography sx={{ color: '#8F7FEE', mb:1, ml:15 }}>{questionNumber}/8</Typography>
+                    <Box sx={{textAlign:"center"}}>
+                            <Typography sx={{ color: '#8F7FEE' }}>{questionNumber}/8</Typography>
                             <Typography id="goalSucsessKpi" sx={{mb:2}}>{question}</Typography>
                             {
                                 labels.map(label =>
@@ -34,10 +33,11 @@ export const QuestionCard = ({ questionNumber, question, labels, value, onChange
                             />
                             </div>
                               )}
+                            <Box sx={{display:"flex", justifyContent:'center', alignItems:'center'}}>
                             {backQuestion}
-                            <Button variant="contained" className={buttonClassName ? "missCheck" : "nextButton"} sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={onClick}>{buttonText}</Button>
-                        </Grid>
-                    </Grid>
+                            <Button variant="contained" className={buttonClassName ? "missCheck" : "nextButton"} sx={{ ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={onClick}>{buttonText}</Button>
+                            </Box>
+                    </Box>
                 </CardContent>
             </Card>
             </Box>

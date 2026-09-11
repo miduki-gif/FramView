@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import { Button, Box} from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useNavigate } from 'react-router';
 
 export const ResultPage = () => {
     const location = useLocation();
@@ -24,6 +25,10 @@ export const ResultPage = () => {
 
     const backPage = () => {
           setCurrentIndex((prev) => prev - 1);
+    }
+    const navigate = useNavigate();
+    const TopPageBack = () => {
+        navigate("/")
     }
     return(
         <>
@@ -51,6 +56,9 @@ export const ResultPage = () => {
                                     }
                                     {currentIndex < categories.length -1 && (
                                         <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={nextPage}>次へ</Button>
+                                    )}
+                                    {categories.length -1 && (
+                                        <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#BFC5CA', color: '#1F1F1F' }} onClick={TopPageBack}>トップへ戻る</Button>
                                     )}
                                 </>
                             )}
