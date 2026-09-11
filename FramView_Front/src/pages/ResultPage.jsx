@@ -32,10 +32,15 @@ export const ResultPage = () => {
                     <CardContent>
                         <Grid container sx={{justifyContent:'center', alignItems:'center'}}>
                             <h1>不足点検知結果</h1>
+                            <br/>
                             {currentCategories && (
                                 <>
-                                    <p>{currentIndex + 1} /{categories.length}</p>
-                                    <p>{currentCategories}</p>
+                                    <Grid container direction="row" spacing={5}>
+                                        <Grid>
+                                            <p sx={{ color: '#8F7FEE', mb:1, ml:15 }}>{currentIndex + 1} /{categories.length}</p>
+                                            <p>{currentCategories}</p>
+                                        </Grid>
+                                    </Grid>
                                     {/* カテゴリに含まれる不足点や質問 */}
                                     {currentResults.map((result, index) => (
                                         <div key={index}>
