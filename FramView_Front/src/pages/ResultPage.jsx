@@ -30,7 +30,7 @@ export const ResultPage = () => {
             <Box sx={{minHeight:"90vh", display:'flex', justifyContent:'center', alignItems:'center',mx:"auto"}}> 
                 <Card sx={{width:"60%", height:"70%"}}>
                     <CardContent>
-                        <Grid container sx={{justifyContent:'center', alignItems:'center'}}>
+                        <Box sx={{textAlign:"center"}}>
                             <h1>不足点検知結果</h1>
                             <br />
                             {currentCategories && (
@@ -55,7 +55,7 @@ export const ResultPage = () => {
                                     )}
                                 </>
                             )}
-                        </Grid>
+                        </Box>
                     </CardContent>
                 </Card>
             </Box>
