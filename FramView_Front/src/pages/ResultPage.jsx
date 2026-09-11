@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import { useState } from "react";
 import { useLocation } from "react-router";
 import { Grid, Button, Box} from '@mui/material';
@@ -52,7 +51,7 @@ export const ResultPage = () => {
                                     )}
                                 </>
                             )}
-                                </Grid>
+                        </Grid>
                     </CardContent>
                 </Card>
             </Box>
