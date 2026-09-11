@@ -37,15 +37,15 @@ export const ResultPage = () => {
                                 <>
                                     <Grid container direction="row" spacing={5}>
                                         <Grid>
-                                            <p sx={{ color: '#8F7FEE', mb:1, ml:15 }}>{currentIndex + 1} /{categories.length}</p>
-                                            <p>{currentCategories}</p>
+                                            <p style={{ color: '#8F7FEE', mb:1, ml:15, fontSize:12}}>カテゴリ{currentIndex + 1} /{categories.length}</p>
+                                            <p style={{fontSize:16}}>{currentCategories}</p>
                                         </Grid>
                                     </Grid>
                                     {/* カテゴリに含まれる不足点や質問 */}
                                     {currentResults.map((result, index) => (
                                         <div key={index}>
-                                            <p>{result.miss_point}</p>
-                                            <p>{result.question}</p>
+                                            <p style={{backgroundColor:"#F1F1EF", color:"#5F5E5A", fontSize:12}}>{result.miss_point}</p>
+                                            <p style={{fontSize:16}}>{result.question}</p>
                                             </div>
                                     ))}
                                     {currentIndex > 0 && 
