@@ -51,15 +51,17 @@ export const ResultPage = () => {
                                             <p style={{fontSize:17}}>{result.question}</p>
                                             </div>
                                     ))}
+                                    <Box sx={{display:"flex", justifyContent:'center', alignItems:'center'}}>
                                     {currentIndex > 0 && 
-                                    <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#BFC5CA', color: '#1F1F1F' }} onClick={backPage}>戻る</Button>
-                                    }
-                                    {currentIndex < categories.length -1 && (
-                                        <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={nextPage}>次へ</Button>
-                                    )}
-                                    {currentIndex === categories.length -1 && (
-                                        <Button variant="contained" sx={{ mt:5, ml:5, backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={TopPageBack}>トップへ戻る</Button>
-                                    )}
+                                        <Button variant="contained" sx={{ backgroundColor: '#BFC5CA', color: '#1F1F1F' }} onClick={backPage}>戻る</Button>
+                                        }
+                                        {currentIndex < categories.length -1 && (
+                                            <Button variant="contained" sx={{ backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={nextPage}>次へ</Button>
+                                        )}
+                                        {currentIndex === categories.length -1 && (
+                                            <Button variant="contained" sx={{ backgroundColor: '#ADF0C7', color: '#1F1F1F' }} onClick={TopPageBack}>トップへ戻る</Button>
+                                        )}
+                                    </Box>
                                 </>
                             )}
                         </Box>
