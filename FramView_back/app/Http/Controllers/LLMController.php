@@ -101,7 +101,7 @@ class LLMController extends Controller
         question: \"\"
         }
         ]
-        不足点1件ごとに1つのオブジェクトとして配列に格納してください。categoryにはrequirementsのキー名（goal,kpi,issue,user,use_case,functional_requirements,non_functional_requirements,constraints,stakeholdersのいずれか）を入れてください。
+        不足点1件ごとに1つのオブジェクトとして配列に格納してください。categoryにはrequirementsのキー名（理想のゴール,成功指標のKPI,課題点,対象ユーザー,利用シーン,機能要件,非機能要件,制約条件,ステークホルダーのいずれか）を入れてください。
         ";
         try {
         $response = OpenAI::responses()->create([

@@ -32,7 +32,7 @@ export const ResultPage = () => {
                     <CardContent>
                         <Grid container sx={{justifyContent:'center', alignItems:'center'}}>
                             <h1>不足点検知結果</h1>
-                            <br/>
+                            <br />
                             {currentCategories && (
                                 <>
                                     <Grid container direction="row" spacing={5}>
