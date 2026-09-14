@@ -69,6 +69,7 @@ function App() {
         <Grid size={{xs:8, sm:6, md:4}}>
           <h2 style={{textAlign:"center", marginBottom:"12px"}}>Loading・・・</h2>
           <LinearProgress color="success"/>
+          <p style={{textAlign:"center", marginTop:"12px"}}>※AIによる分析処理のため、結果が表示されるまで1分程度かかる場合があります。</p>
         </Grid> 
       </Grid>
       </>
