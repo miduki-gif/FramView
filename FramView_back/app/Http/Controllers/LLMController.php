@@ -10,17 +10,9 @@ use OpenAI\Laravel\Facades\OpenAI;
 
 class LLMController extends Controller
 {
-    //
     public function Check(Request $request){
         set_time_limit(120); // OPENAI_REQUEST_TIMEOUTと合わせる
-        //ddで処理をとめるとかログに０と出す等POSTで処理が走っているのかを確認する
-        // dd($request);
         $userInput = $request->json("message");
-//         return response()->json([
-//  "message" => "success",
-//  "data"=> $userInput
-//         ]);
-        // dd($userInput ,gettype($userInput));
         //配列を結合して文章にするためにimplodeで入力内容を改行して結合する
         $inputText = implode("\n", $userInput);
         $requirements = [
