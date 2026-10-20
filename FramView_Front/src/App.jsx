@@ -33,7 +33,6 @@ function App() {
   const MissCheck = async () => {
     if (buttonClassName){
       const data = await fetchExecute(inputContents);
-        console.log("処理完了");
         navigate("/result", { state: { resResult: data }});
     }else{
       setQuestionCurrentContents(questionCurrentContents + 1)
@@ -76,16 +75,10 @@ function App() {
     )
   }
 
-  // const buttonUI = questionCurrentContents === questions.length -1 ? <Button>保存して一覧へ</Button> : 
   return (
     <>
     <header>
       <div style={{borderBottom: "5px solid #ADF0C7"}}>
-        {/* <div style={{display:'flex'}}>
-        <img src='src/assets/block1.png' />
-        <img src='src/assets/block1.png' />
-        <img src='src/assets/block2.png' />
-        </div> */}
         <a href='/' style={{textDecoration:"none"}}>
         <h1 style={{fontWeight:'bold', color:"black", paddingLeft:"150px"}}>FramView</h1>
         </a>
@@ -103,97 +96,6 @@ function App() {
     questionNumber={questionCurrentContents + 1}
     labels={labels}
     />
-    {/* <Card sx={{mb: 5 }}>
-      <CardContent>
-        <Grid container direction="column">
-          <Grid item>
-           <Typography sx={{color:'#1F1F1F'}}>プロジェクト要件定義一覧</Typography>
-           <Card sx={{ mb:5 }}>
-            <CardContent>
-              <Button variant="contained" sx={{backgroundColor:'#FFF6B6', color:'#1F1F1F', borderRadius:'4px'}}>調整中</Button>
-              <Typography>ホテル予約システム開発</Typography>
-              <Button variant="text" sx={{color: '#837272'}}>...</Button>
-              <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F', mr:'7px'}}>検知結果</Button>
-              <Button variant="contained" sx={{backgroundColor:'#C6DCFF', color:'#1F1F1F'}}>✎編集</Button>
-            </CardContent>
-           </Card>
-          </Grid>
-          <Grid item>
-           <Card sx={{ mb:5 }}>
-            <CardContent>
-              <Button variant="contained" sx={{backgroundColor:'#FFF6B6', color:'#1F1F1F', borderRadius:'4px'}}>調整中</Button>
-              <Typography>マッチングサービス</Typography>
-              <Button variant="text" sx={{color: '#837272'}}>...</Button>
-              <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F', mr:'7px'}}>検知結果</Button>
-              <Button variant="contained" sx={{backgroundColor:'#C6DCFF', color:'#1F1F1F'}}>✎編集</Button>
-            </CardContent>
-           </Card>
-          </Grid>
-           <Grid item>
-           <Card sx={{ mb:5 }}>
-            <CardContent>
-              <Button variant="contained" sx={{backgroundColor:'#FFC6C6', color:'#1F1F1F', borderRadius:'4px'}}>完了</Button>
-              <Typography>勤怠管理アプリ開発</Typography>
-              <Button variant="text" sx={{color: '#837272'}}>...</Button>
-              <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F', mr:'7px'}}>検知結果</Button>
-              <Button variant="contained" sx={{backgroundColor:'#C6DCFF', color:'#1F1F1F'}}>✎編集</Button>
-            </CardContent>
-           </Card>
-          </Grid>
-           <Grid item>
-           <Card sx={{ mb:5 }}>
-            <CardContent>
-              <Button variant="contained" sx={{backgroundColor:'#FFC6C6', color:'#1F1F1F', borderRadius:'4px'}}>完了</Button>
-              <Typography>ショッピングモールアプリ開発</Typography>
-              <Button variant="text" sx={{color: '#837272'}}>...</Button>
-              <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F', mr:'7px'}}>検知結果</Button>
-              <Button variant="contained" sx={{backgroundColor:'#C6DCFF', color:'#1F1F1F'}}>✎編集</Button>
-            </CardContent>
-           </Card>
-          </Grid>
-           <Grid item>
-           <Card sx={{ mb:5 }}>
-            <CardContent>
-              <Button variant="contained" sx={{backgroundColor:'#FFF6B6', color:'#1F1F1F', borderRadius:'4px'}}>調整中</Button>
-              <Typography>書籍検索システム開発</Typography>
-              <Button variant="text" sx={{color: '#837272'}}>...</Button>
-              <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F', mr:'7px'}}>検知結果</Button>
-              <Button variant="contained" sx={{backgroundColor:'#C6DCFF', color:'#1F1F1F'}}>✎編集</Button>
-            </CardContent>
-           </Card>
-          </Grid>
-          <Grid item>
-           <Card sx={{ mb:5 }}>
-            <CardContent>
-              <Button variant="contained" sx={{backgroundColor:'#FFF6B6', color:'#1F1F1F', borderRadius:'4px'}}>調整中</Button>
-              <Typography>動画視聴サービス開発</Typography>
-              <Button variant="text" sx={{color: '#837272'}}>...</Button>
-              <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F', mr:'7px'}}>検知結果</Button>
-              <Button variant="contained" sx={{backgroundColor:'#C6DCFF', color:'#1F1F1F'}}>✎編集</Button>
-            </CardContent>
-           </Card>
-         </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
-    <Card sx={{mb: 5 }}>
-      <CardContent>
-        <Grid container direction="column">
-          <Grid item>
-            <Typography id="Check">検討漏れ項目</Typography>
-            <TextField
-            required
-            describedby='Check'
-            multiline
-            minRows={2}
-            maxRows={4}
-            sx={{width:"80%"}}
-          />
-           <Button variant="contained" sx={{backgroundColor:'#ADF0C7', color:'#1F1F1F'}}>pdf出力</Button>
-          </Grid>
-        </Grid>
-      </CardContent>
-    </Card> */}
         <footer>
           <div style={{backgroundColor:"#36be6b", height: "15vh"}}>
             <h1 style={{fontWeight:'bold', color:"white", paddingLeft:"150px", paddingTop:"25px"}}>FramView</h1>

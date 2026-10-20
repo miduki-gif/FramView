@@ -16,9 +16,6 @@ export const useMissCheck =  (inputContents) => {
                 headers: {
                     "Content-Type": 'application/json',
                     "Accept": 'application/json',
-                    //fetchでリクエストを送信する際に、正規の画面から送られたリクエストであることを
-                    //サーバーへ証明するためのものが、'X-CSRF-TOKEN'
-                    // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
                 },
                 body: JSON.stringify({ message: inputContents })
             });
